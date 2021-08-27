@@ -1,0 +1,1 @@
+# Script-for-lncRNA-predict-and-analysis
