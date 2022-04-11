@@ -1,18 +1,15 @@
 #!/usr/bin/perl
-open$in1,"/home/li/Myopsalax/LncRNA/v3/Lnc_identifiy/pip_out/blast2go_topblast.txt"or die;
+open$in1,"$ARGV[0]"or die; #### Input file: 
 while($in2=<$in1>){
-next if $in2=~/(TRINITY\S+)_i\d+\s+(---NA---)/;
 if($in2=~/(TRINITY\S+)_i\d+(.*)/){
 $nam=$1;
 @b=split"\t",$2;
-next if $b[4]>=1e-5;
-print$b[4]."\n";
+next if $b[9]>=1e-10;
 $nr{$nam}.="\t".$b[1];
-#print $gen{$rf};
 }
 }
 
-open$in1,"/home/li/Myopsalax/LncRNA/v3/Lnc_identifiy/pip_out/3_non_sw"or die;
+open$in1,"$ARGV[1]"or die; #### Input file2:3_non_sw
 while($in2=<$in1>){chomp$in2;
 if($in2=~/^(\S+)/){$nam=$1;
 if($nr{$nam}){
@@ -21,7 +18,7 @@ else{
 $d.=$nam."\n";
 }}}
 
-open$out,'>',"/home/li/Myopsalax/LncRNA/v3/Lnc_identifiy/pip_out/4_nr" or die;
+open$out,'>',"4_nr" or die; #### Output file1: 4_nr
 print$out($c);
-open$out,'>',"/home/li/Myopsalax/LncRNA/v3/Lnc_identifiy/pip_out/4_non_nr" or die;
+open$out,'>',"4_non_nr" or die; #### Output file: 4_non_nr
 print$out($d);
