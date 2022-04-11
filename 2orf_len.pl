@@ -1,11 +1,11 @@
 #!/usr/bin/perl
-open$in1,"/home/li/Myopsalax/LncRNA/v3/Lnc_identifiy/pip_out/1_length_greater"or die;
+open$in1,"$ARGV[0]"or die; #### Input file1:1_length_greater
 while($in2=<$in1>){
 chomp$in2;
 if($in2=~/^(TRI\S+)/){
 $gen{$1}=1;
 }}
-open$in1,"/home/li/Myopsalax/LncRNA/v3/CDS/Trinity.fasta.transdecoder.pep"or die;
+open$in1,"$ARGV[1]"or die;  #### Input file2: Trinity.fasta.transdecoder.pep
 while($in2=<$in1>){
 if($in2=~/>(TRI\S+?)::.*len:(\d+)/){
 $len=$2;$nam=$1;next unless $gen{$1};
@@ -21,5 +21,5 @@ $c.=$nam."\t".$c{$nam}."\n";#print$_;
 #print$_."\t".$c{$_}."\n";
 }
 print$c;
-open$out,'>',"/home/li/Myopsalax/LncRNA/v3/Lnc_identifiy/pip_out/2_orf_len"or die;
+open$out,'>',"2_orf_len"or die; #### Output file: 2_orf_len
 print$out($c);
