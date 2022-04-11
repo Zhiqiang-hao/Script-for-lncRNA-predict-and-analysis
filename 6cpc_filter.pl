@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-open$in1,"/home/li/Myopsalax/LncRNA/v3/Lnc_identifiy/pip_out/6cpc_out.txt"or die;
+open$in1,"$ARGV[0]"or die; #### Input file: 6cpc_out.txt
 while($in2=<$in1>){
 if($in2=~/^(TRINITY\S+)_i\d+\s+(\S+\s+){5}(\S+)\s+coding/){
 $nam=$1;
@@ -12,7 +12,7 @@ elsif($in2=~/^(TRINITY\S+)_i\d+\s+(\S+\s+){5}(\S+)\s+noncoding/){
 $cod{$1}.=$3.";";
 }
 }
-open$in1,"/home/li/Myopsalax/LncRNA/v3/Lnc_identifiy/pip_out/5_non_pfam"or die;
+open$in1,"5_non_pfam"or die;
 while($in2=<$in1>){chomp$in2;
 if($in2=~/^(\S+)/){$nam=$1;#print$nam."\n";
 if($cpc{$nam}){print$nam;
@@ -21,7 +21,7 @@ else{
 $d.=$nam."\t".$cod{$nam}."\n";
 }}}
 
-open$out,'>',"/home/li/Myopsalax/LncRNA/v3/Lnc_identifiy/pip_out/6_cpc_coding" or die;
+open$out,'>',"6_cpc_coding" or die; #### Output file1: 6_cpc_coding
 print$out($c);
-open$out,'>',"/home/li/Myopsalax/LncRNA/v3/Lnc_identifiy/pip_out/6_non_cpc" or die;
+open$out,'>',"6_non_cpc" or die; #### Output file2: 6_non_cpc
 print$out($d);
