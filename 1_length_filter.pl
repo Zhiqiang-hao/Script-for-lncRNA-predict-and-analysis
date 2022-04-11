@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-open$in3,"/home/li/Myopsalax/LncRNA/v3/Trinity/Trinity.fasta"or die;
+open$in3,"$ARGV[0]"or die; #### PATHWAY to Trinity.fasta ####
 while($in4=<$in3>){
 chomp$in4; 
 if ($in4=~/>((\S+)_\S+)/){$a=$1;$gen=$2;next;}
@@ -18,7 +18,7 @@ $c.=$_."\n";
 for(keys%less){
 $d.=$_."\n";
 }
-open$out,'>',"/home/li/Myopsalax/LncRNA/v3/Lnc_identifiy/pip_out/1_length_greater"or die;
+open$out,'>',"1_length_greater"or die;#### Output for transcripts with length longer than 200 nt ####
 print$out($c);
-open$out,'>',"/home/li/Myopsalax/LncRNA/v3/Lnc_identifiy/pip_out/1_length_less"or die;
+open$out,'>',"1_length_less"or die; ##### Output for transcripts with short length (<200) ####
 print$out($d);
