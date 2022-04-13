@@ -6,3 +6,5 @@ For the first script "1_length_filter.pl", it could classify transcripts into tw
 
 For the script "2orf_len.pl", it can calculate the transcript orf length in file "1_length_grater". Its input file is the file "1_length_greater" including the transcript name from previous step, and another input file is "Trinity.fasta.transdecoder.pep". The output file is "2_orf_len".
 
+For the script ""
+
