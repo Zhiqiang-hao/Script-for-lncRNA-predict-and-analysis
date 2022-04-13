@@ -20,7 +20,7 @@ For the script “6cpc_filter.pl”, it was used to extract the transcript name 
 
 For the script “7cpat_filter.pl”, this script could classify transcript into noncoding and coding classes based on the software CPAT output. The input file is “cpat_out.ORF_prob.best.tsv”.
 
-For the script “8rfam_filter.pl”, this script could use Rfam output and classify transcripts into two classes, 8_house_rfam for transcripts with homology in Rfam database, and 8_non_rfam2 for transcripts without homology against Rfam database. The input file is "Other_needed_file/rfam_class2" that is  the catagory of the RNA family for snRNA,snoRNA, tRNA, and rRNA.
+For the script “8rfam_filter.pl”, this script could use Rfam output and classify transcripts into two classes, 8_house_rfam for transcripts with homology in Rfam database, and 8_non_rfam2 for transcripts without homology against Rfam database. The input file is "Other_needed_file/rfam_class2" that is  the catagory of the RNA family for snRNA, snoRNA, tRNA, and rRNA.
 
 
 
