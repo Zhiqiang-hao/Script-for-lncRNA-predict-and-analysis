@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-open$in1,"$ARGV[0]"or die; #### Input file: 
+open$in1,"$ARGV[0]"or die; #### Input file: nr_out
 while($in2=<$in1>){
 if($in2=~/(TRINITY\S+)_i\d+(.*)/){
 $nam=$1;
