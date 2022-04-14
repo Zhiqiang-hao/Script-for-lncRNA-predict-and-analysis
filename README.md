@@ -4,7 +4,7 @@ This is the perl script set for lncRNA prediction. To facilitate the usage of th
 
 For the first script "1_length_filter.pl", it could classify transcripts into two classes: transcripts with length shorter than 200nt and transcripts with length no less than 200nt. The input file is transcript sequence in fasta format, for example, "Trinity.fasta" from the Trinity result by assembling transcriptome data.
 
-For the script "2orf_len.pl", it can calculate the transcript orf length in file "1_length_grater". Its input file is the file "1_length_greater" including the transcript name from previous step, and another input file is "Trinity.fasta.transdecoder.pep". The output file is "2_orf_len". To generate file "Trinity.fasta.transdecoder.pep", the software transdecoder could finish this task, the command line is "TransDecoder.LongOrfs -t Trinity.fasta" and "TransDecoder.Predict -t Trinity.fasta".
+For the script "2orf_len.pl", it can calculate the transcript ORF length in file "1_length_grater". Its input file is the file "1_length_greater" including the transcript name from previous step, and another input file is "Trinity.fasta.transdecoder.pep". The output file is "2_orf_len". To generate file "Trinity.fasta.transdecoder.pep", the software transdecoder could finish this task, the command line is "TransDecoder.LongOrfs -t Trinity.fasta" and "TransDecoder.Predict -t Trinity.fasta".
 
 For the script 2orf_filter.pl, it was used for classifying transcripts into two classes, one with long ORFs more than 300 nt, and one with short ORFs. The input file comes from outfile “1_length_greater” of script “1_length_filter” and the outfile “2_orf_len” of script. The transcripts with short ORFs are used for next analysis. 
 
