@@ -7,7 +7,7 @@ $gen{$1}=1;
 }}
 open$in1,"$ARGV[1]"or die;  #### Input file2: Trinity.fasta.transdecoder.pep
 while($in2=<$in1>){
-if($in2=~/>(TRI\S+?)::.*len:(\d+)/){
+if($in2=~/>(TRI\S+)_.*len:(\d+)/){
 $len=$2;$nam=$1;next unless $gen{$1};
 if ($c{$nam}<$len){
 $c{$nam}=$len;#print$len."\t".$nam."\n";
